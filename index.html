@@ -128,32 +128,39 @@
           background: radial-gradient(ellipse at bottom, #f8c8dc 0%, #f5b0cb 50%, #f093fb 100%);
         }
 
+        .text-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+          text-align: center;
+          padding: 0 20px;
+          pointer-events: none;
+        }
+
         .happy-woman-day {
           color: #fff;
           font-size: 50px;
-          position: fixed;
-          top: 40px;
           text-shadow: 0 0 20px rgba(255, 107, 157, 0.8), 0 0 40px rgba(255, 107, 157, 0.5);
           animation: glow-text 2s ease-in-out infinite;
-          z-index: 1000;
           font-weight: bold;
           letter-spacing: 2px;
-          text-align: center;
-          width: 100%;
-          padding: 0 20px;
+          margin-bottom: 20px;
+          max-width: 90%;
         }
 
         .greeting {
           color: #fff;
           font-size: 24px;
-          position: fixed;
-          top: 120px;
           text-shadow: 0 0 10px rgba(255, 107, 157, 0.8);
-          z-index: 1000;
-          text-align: center;
-          width: 100%;
           font-style: italic;
-          padding: 0 20px;
+          max-width: 90%;
         }
 
         @keyframes glow-text {
@@ -672,12 +679,10 @@
         @media (max-width: 768px) {
           .happy-woman-day {
             font-size: 32px;
-            top: 30px;
           }
           
           .greeting {
             font-size: 18px;
-            top: 90px;
           }
           
           #welcome-screen h1 {
@@ -713,8 +718,12 @@
     <!-- Màn hình chính -->
     <div id="main-screen">
         <div class="night"></div>
-        <div class="happy-woman-day">𝓗𝓪𝓹𝓹𝔂 𝔀𝓸𝓶𝓮𝓷'𝓼 𝓭𝓪𝔂 2️⃣0️⃣/1️⃣0️⃣</div>
-        <div class="greeting">Gửi lời yêu thương từ anh em phòng CSHT&TTB</div>
+        
+        <!-- Container chứa text để dễ dàng căn giữa -->
+        <div class="text-container">
+            <div class="happy-woman-day">𝓗𝓪𝓹𝓹𝔂 𝔀𝓸𝓶𝓮𝓷'𝓼 𝓭𝓪𝔂 2️⃣0️⃣/1️⃣0️⃣</div>
+            <div class="greeting">Gửi lời yêu thương từ anh em phòng CSHT&TTB</div>
+        </div>
         
         <div class="flowers">
           <!-- Các bông hoa ban đầu -->
