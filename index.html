@@ -160,37 +160,6 @@
           text-shadow: 0 0 10px rgba(255, 107, 157, 0.8);
           font-style: italic;
           max-width: 90%;
-          margin-bottom: 20px;
-        }
-
-        .heart-message {
-          color: #fff;
-          font-size: 36px;
-          text-shadow: 0 0 15px rgba(255, 107, 157, 0.9);
-          font-weight: bold;
-          margin-top: 20px;
-          opacity: 0;
-          animation: fadeIn 2s ease 4s forwards;
-        }
-
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-
-        .heart {
-          display: inline-block;
-          animation: heartbeat 1.5s ease-in-out infinite;
-          color: #ff4d94;
-        }
-
-        @keyframes heartbeat {
-          0% { transform: scale(1); }
-          5% { transform: scale(1.3); }
-          10% { transform: scale(1.1); }
-          15% { transform: scale(1.4); }
-          50% { transform: scale(1); }
-          100% { transform: scale(1); }
         }
 
         @keyframes glow-text {
@@ -723,6 +692,7 @@
           font-size: 24px;
           opacity: 0.7;
           animation: float-up 8s linear infinite;
+          color: #ffcc00; /* Màu vàng */
         }
 
         @keyframes float-up {
@@ -775,10 +745,6 @@
             font-size: 18px;
           }
           
-          .heart-message {
-            font-size: 24px;
-          }
-          
           #welcome-screen h1 {
             font-size: 28px;
           }
@@ -823,7 +789,6 @@
         <div class="text-container">
             <div class="happy-woman-day">𝓗𝓪𝓹𝓹𝔂 𝔀𝓸𝓶𝓮𝓷'𝓼 𝓭𝓪𝔂 2️⃣0️⃣/1️⃣0️⃣</div>
             <div class="greeting">Gửi lời yêu thương từ anh em phòng CSHT&TTB</div>
-            <div class="heart-message">We <span class="heart">❤</span> You</div>
         </div>
         
         <!-- Hiệu ứng trái tim bay -->
@@ -1069,7 +1034,7 @@
         // Tạo hiệu ứng trái tim bay
         function createHearts() {
             const heartsContainer = document.getElementById('floating-hearts');
-            const heartCount = 30;
+            const heartCount = 10; // Giảm từ 30 xuống 10
             
             for (let i = 0; i < heartCount; i++) {
                 const heart = document.createElement('div');
